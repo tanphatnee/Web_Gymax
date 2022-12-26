@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- css -->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="style.css">
+	<!-- flickity -->
+	<link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+	<script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+	<!-- font-awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+	
+	<title>Sản phẩm</title>
+</head>
+
+<body class="">
+	<header class="top-header ">
+		<div class="header">
+			<a href="index.html" class="logo">
+				<img src="images/Logo.png" alt="logo">
+			</a>
+			
+			<div  class="menu" id="menu">
+				<nav class="nav-menu" >
+					<li onclick="AddItemMenuMobile()" class="li-home"><a href="index.html">Trang chủ</a><i class="fas fa-chevron-right"></i>
+						<nav class="home" id="home"></nav>
+							<li><a href="./index.html#scontent">Bán chạy</a></li>
+							<li><a href="./index.html#scontent">Thiết bị</a></li>
+							<li><a href="./index.html#scontent">Review</a></li>
+						</nav>
+					</li>
+					<li><a href="sanpham.html" style="color: aquamarine;">Sản phẩm</a></li>
+					<li><a href="contact.html">Liên hệ</a></li>
+					<li><a href="#">Danh mục</a></li>
+					<li><a href="#">Blog</a></li>
+					
+				</nav>
+
+			</div>
+			<div class="section-icon">
+				<div class="icon">
+					<div class="icon-search icon-top"><i class="fas fa-search fa-lg"></i></div>
+					<div class="icon-cart icon-top"><i class="fas fa-shopping-basket fa-lg"></i></i></div>
+					<div class="user icon-top"><a href="login.html" class="text-white"><i class="fas fa-user fa-lg"></i></a></div>
+				</div>
+			</div>
+			<!-- <button href="javascript:void(0);" class="btn-menu" onclick="AddMenuMobile()">
+				<i class="fa fa-bars fa-lg"></i>
+			</button> -->
+			<button class="btn-menu" onclick="AddMenuMobile()"><i class="fas fa-bars fa-lg"></i></button>
+		</div>
+	</header>
+	<div class="my-4 ">
+		<div class="max-w-screen-1170 mx-auto ">
+			<div class="flex flex-wrap">
+				<div class="w-full 768:w-1/2 px-[15px]">
+					<div class="w-full h-full">
+						<img class="w-[100%] max-h-[500px]" src="images/product2.png" alt="">
+					</div>
+					
+				</div>
+				<div class="w-full 768:w-1/2 leading-7 px-[15px]">
+					<h1 class="font-semibold text-[25px] my-4">Máy tập GCEC340</h1>
+					<div class="border-yellow-400 text-yellow-400">
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+						<i class="fa fa-star"></i>
+					</div>
+					<div class="my-4">
+						<p class="mr-2">Color: </p> 
+						<button class="border px-3 hover:bg-blue-200 py-1">Đen</button>
+						<button class="border px-3 hover:bg-blue-200 py-1">Trắng</button>
+					</div>
+					<div><Strong class="text-[20px]" >Giá: </Strong><span class="text-red-500 text-[20px]">9.420.000đ</span></div>
+					<div class="mt-3">
+						<button class="w-fit px-4 mr-3 py-2 rounded-sm bg-red-500 text-white">Mua Ngay</button>
+						<button class="w-fit py-2 px-4 rounded-sm bg-orange-400 text-white">Thêm vào giỏ hàng</button>
+					</div>
+					
+					<p class="mt-10"><Strong>Địa chi: </Strong> Thành phố Thái nguyên</p>
+					<p class="font-semibold">Thông tin chi tiết:</p>
+					<p><Strong>Chất liệu: </Strong> Kim loại</p>
+					<p><Strong> </Strong>Sản phẩm nhỏ gọn thích hợp để tập ở nhà</p>
+					<p><Strong>Bảo hành: </Strong>10 tháng</p>
+				</div>
+			</div>
+			<h1 class="text-[20px] font-semibold my-4">Những sản phẩm khác</h1>
+			<div class="product-top-sellers">
+				
+			<a class="item-product" href="./sanpham.html">
+				<div class="img-product2">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product1.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy đạp xe Cardio</p>
+					<p class="price">3.420.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-tap-bxe116-elliptical.html">
+				<div class="img-product3">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product3.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy tập BXE116 Elliptical</p>
+					<p class="price">6.720.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-tap-ghd.html">
+				<div class="img-product4">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product4.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy tập GHD</p>
+					<p class="price">9.020.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-tap-pro-72ai-ncline.html">
+				<div class="img-product5">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product5.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy tập Pro 7.2AI Incline</p>
+					<p class="price">7.420.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-weight-bench.html">
+				<div class="img-product6">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product6.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy Weight Bench</p>
+					<p class="price">3.420.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-tap-lite-59.html">
+				<div class="img-product7">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product7.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy tập Lite 5.9 </p>
+					<p class="price">3.420.000đ</p>
+				</div>
+			</a>
+			<a class="item-product" href="./may-tap-pro.html">
+				<div class="img-product8">
+					<div class="btn-product">
+						<div class="item-btn-product"><i class="fas fa-shopping-basket shopping-cart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-eye"></i></div>
+						<div class="item-btn-product"><i class="fas fa-heart"></i></div>
+						<div class="item-btn-product"><i class="fas fa-exchange-alt "></i></div>
+					</div>
+					<img src="./images/product8.png" alt="">
+				</div>
+				<div class="text-product">
+					<p class="name-product">Máy tập Pro</p>
+					<p class="price">3.420.000đ</p>
+				</div>
+			</a>
+			
+		</div>
+		</div>  
+		
+	</div>
+	<footer class="section-footer bg-black">
+	
+			<div class="section-footer2">
+				<div class="footer2">
+					<div class="contact-us">
+						<p class="title-footer2">Liên hệ</p>
+						<div class="line-contact">
+							<i class="fas fa-map-marker-alt"></i>
+							<p class="text-text-contact"> số nhà 12. tổ 4 phường Tân Thịnh thành phố Thái nguyên </p>
+						</div>
+						<div class="line-contact">
+							<i class="fas fa-map-marker-alt"></i>
+							<p class="text-text-contact">023 32423 223</p>
+						</div>
+						<div class="line-contact">
+							<i class="fas fa-envelope"></i>
+							<p class="text-text-contact">gymax@example.com</p>
+						</div>
+						<div class="line-contact">
+							<i class="far fa-clock"></i>
+							<p class="text-contact">9:00 - 20:00 các ngày trong tuần</p>
+						</div>
+					</div>
+					<div class="my-account">
+						<p class="title-footer2">Tài khoản của tôi</p>
+						 <p class="text-footer2">Tài khoản của tôi</p>
+						 <p class="text-footer2">Thanh toán</p>
+						 <p class="text-footer2">Đăng kí</p>
+						 <p class="text-footer2">Đăng nhập</p>  
+					</div>
+					<div class="information">
+						<p class="title-footer2">Thông tin</p>
+						<p class="text-footer2">Về chúng tôi</p>
+						<p class="text-footer2">Liên hệ</p>
+					</div>
+					<div class="quick-link">
+						<p class="title-footer2">Link</p>
+						<p class="text-footer2">Thành viên mới</p>
+						<p class="text-footer2">Help center</p>
+						<p class="text-footer2">Report spam</p>
+						<p class="text-footer2">FAQs</p>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer">
+		</div>
+	</footer>
+</body>
+<script>
+	function AddMenuMobile(){
+		var menu = document.getElementById("menu");
+		if(menu.className === "menu"){
+			menu.className +=" "+"menu-mobile";
+		}
+		else{
+			
+			menu.className = "menu";
+		}
+	}
+	function AddItemMenuMobile(){
+		var home = document.getElementById("home");
+		if( home.className === "home"){
+			home.className += " "+"item-home";
+		}
+		else{
+			home.className = "home";
+		}
+	}
+  
+  
+</script>
+</html>
