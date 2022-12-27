@@ -1,127 +1,226 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- css -->
-	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
-	<link rel="stylesheet" href="css/qlbaiviet.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-	<title>clockify</title>
-	<!-- jquery -->
-	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<!-- js -->
-	<script src="js/BE_main.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css -->
 
 
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <title>title</title>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
-
 <body class="bg-gray-50">
-	<header class="top-header ">
-		<div class="header">
-			<a href="index.html" class="logo">
-				<img src="images/Logo.png" alt="logo">
-			</a>
-			
-			<div  class="menu" id="menu">
-				<nav class="nav-menu" >
-					<li onclick="AddItemMenuMobile()" class="li-home"><a href="index.html">Trang chủ</a><i class="fas fa-chevron-right"></i>
-						<nav class="home" id="home"></nav>
-							<li><a href="./index.html#scontent">Bán chạy</a></li>
-							<li><a href="./index.html#scontent">Thiết bị</a></li>
-							<li><a href="./index.html#scontent">Review</a></li>
-						</nav>
-					</li>
-					<li><a href="sanpham.html">Sản phẩm</a></li>
-					<li><a href="contact.html">Liên hệ</a></li>
-					<li><a href="#">Danh mục</a></li>
-					<li><a href="#">Blog</a></li>
-					
-				</nav>
+<header class="top-header ">
+    <div class="header">
+        <a href="public/index.html" class="logo">
+            <img src="images/Logo.png" alt="logo">
+        </a>
+        <div class="menu" id="menu">
+            <nav class="nav-menu">
+                <li onclick="AddItemMenuMobile()" class="li-home"><a href="public/index.html">Trang chủ</a><i
+                        class="fas fa-chevron-right"></i>
+                    <nav class="home" id="home"></nav>
+                <li><a href="public/index.html#scontent">Bán chạy</a></li>
+                <li><a href="public/index.html#scontent">Thiết bị</a></li>
+                <li><a href="public/index.html#scontent">Review</a></li>
+            </nav>
+            </li>
+            <li><a href="sanpham.html">Sản phẩm</a></li>
+            <li><a href="contact.html">Liên hệ</a></li>
+            <li><a href="#">Danh mục</a></li>
+            <li><a href="#">Blog</a></li>
+            </nav>
+        </div>
+        <div class="section-icon">
+            <div class="icon">
+                <div class="icon-search icon-top"><i class="fas fa-search fa-lg"></i></div>
+                <div class="icon-cart icon-top"><i class="fas fa-shopping-basket fa-lg"></i></i></div>
+                <div class="user icon-top"><a href="login.html" class="text-white"><i class="fas fa-user fa-lg"></i></a>
+                </div>
+            </div>
+        </div>
+        <button class="btn-menu" onclick="AddMenuMobile()"><i class="fas fa-bars fa-lg"></i></button>
+    </div>
+</header>
+<div class="flex content-center items-center justify-center h-full mt-10">
+    <div class="w-full 768:w-4/12 px-4 ">
+        <div
+                class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0">
+            <div class="rounded-t mb-0 px-6 py-6">
+                <div class="text-center mb-3">
+                    <h6 class="text-blueGray-500 text-[18px] font-bold">Đăng kí</h6>
+                </div>
+                <hr class="mt-6 border-b-1 border-gray-300">
+            </div>
+            <div class="flex-auto px-4 lg:px-10 py-10 pt-0">
+                <form>
+                    <div class="relative w-full mb-3"><label
+                            class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                            for="inputEmail">Email</label>
+                        <input oninput="validate()" id="inputEmail" type="email"
+                               class="border-0 py-2 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        >
+                        <p class="text-danger mb-4" id="failEmail"></p>
+                        <label
+                                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                for="inputUsername">Tên đăng nhập</label>
+                        <input oninput="validate()" id="inputUsername" type="text"
+                               class="border-0 py-2 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        >
+                        <p class="text-danger mb-4" id="failUserName"></p>
 
-			</div>
-			<div class="section-icon">
-				<div class="icon">
-					<div class="icon-search icon-top"><i class="fas fa-search fa-lg"></i></div>
-					<div class="icon-cart icon-top"><i class="fas fa-shopping-basket fa-lg"></i></i></div>
-					<div class="user icon-top"><a href="login.html" class="text-white"><i class="fas fa-user fa-lg"></i></a></div>
-				</div>
-			</div>
-			<button class="btn-menu" onclick="AddMenuMobile()"><i class="fas fa-bars fa-lg"></i></button>
-		</div>
-	</header>
-	<div class="flex content-center items-center justify-center h-full mt-10">
-		<div class="w-full 768:w-4/12 px-4 ">
-			<div
-				class="relative flex flex-col min-w-0 break-words w-full mb-6 shadow-lg rounded-lg bg-gray-200 border-0">
-				<div class="rounded-t mb-0 px-6 py-6">
-					<div class="text-center mb-3">
-						<h6 class="text-blueGray-500 text-[18px] font-bold">Đăng kí</h6>
-					</div>
-					<hr class="mt-6 border-b-1 border-gray-300">
-				</div>
-				<div class="flex-auto px-4 lg:px-10 py-10 pt-0">
-					<form>
-						<div class="relative w-full mb-3"><label
-								class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-								for="grid-email">Email</label>
-							<input id="grid-email" type="email"
-								   class="border-0 px-3 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								   placeholder="">
-							<label
-									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-									for="grid-email">Tên đăng nhập</label>
-							<input  type="soDienThoai"
-								   class="border-0 px-3 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								   placeholder="">
-							<label
-									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-									for="grid-email">Số điện thoại</label>
-							<input  type="email"
-								   class="border-0 px-3 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								   placeholder="">
-							<label
-									class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-									for="grid-password">Mật khẩu</label>
-							<input id="grid-password" type="password"
-								   class="border-0 px-3 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
-								   placeholder="">
-						</div>
-						<div class="text-center mt-6"><button
-								class="bg-[#1e293b] text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
-								type="button">Đăng kí</button></div>
-					</form>
-				</div>
-			</div>
-		</div>
-	</div>
-</body>
+                        <label
+                                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                for="inputPhone">Số điện thoại</label>
+                        <input oninput="validate()" id="inputPhone" type="text"
+                               class="border-0 py-2 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        >
+                        <p class="text-danger mb-4" id="failPhone"></p>
+
+                        <label
+                                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                for="inputPassWord">Mật khẩu</label>
+                        <input oninput="validate()" id="inputPassWord" type="password"
+                               class="border-0 py-2 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        >
+                        <p class="text-danger mb-4" id="failPassWord"></p>
+
+                        <label
+                                class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
+                                for="inputRePassWord">Xác nhận mật khẩu</label>
+                        <input oninput="validate()" id="inputRePassWord" type="password"
+                               class="border-0 py-2 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
+                        >
+                        <p class="text-danger mb-4" id="failRePassWord"></p>
+
+                    </div>
+                    <div class="text-center mt-6">
+                        <button
+                                class="bg-[#1e293b] text-white active:bg-blueGray-600 text-sm font-bold uppercase px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 w-full ease-linear transition-all duration-150"
+                                onclick="register()" type="button">Đăng kí
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="register.js"></script>
+
 <script>
-	function AddMenuMobile(){
-		let menu = document.getElementById("menu");
-		if(menu.className === "menu"){
-			menu.className +=" "+"menu-mobile";
-		}
-		else{
-			
-			menu.className = "menu";
-		}
-	}
-	function AddItemMenuMobile(){
-		let home = document.getElementById("home");
-		if( home.className === "home"){
-			home.className += " "+"item-home";
-		}
-		else{
-			home.className = "home";
-		}
-	}
-  
-  
+    function AddMenuMobile() {
+        let menu = document.getElementById("menu");
+        if (menu.className === "menu") {
+            menu.className += " " + "menu-mobile";
+        } else {
+
+            menu.className = "menu";
+        }
+    }
+
+    function AddItemMenuMobile() {
+        let home = document.getElementById("home");
+        if (home.className === "home") {
+            home.className += " " + "item-home";
+        } else {
+            home.className = "home";
+        }
+    }
+
+    let emailInput = document.getElementById("inputEmail")
+    let userNameInput = document.getElementById("inputUsername")
+    let phoneInput = document.getElementById("inputPhone")
+    let passwordInput = document.getElementById("inputPassWord")
+    let rePasswordInput = document.getElementById("inputRePassWord")
+    let isCheck;
+    let user;
+    let arr = JSON.parse(localStorage.getItem("listUser"));
+    if(arr ==null) {
+        arr = []
+    }
+    function validate() {
+        let check = true;
+        let email = emailInput.value;
+        let username = userNameInput.value;
+        let phone = phoneInput.value;
+        let password = passwordInput.value;
+        let rePassword = rePasswordInput.value;
+        const EMAIL_PATTERN = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+
+
+        if (email.trim() == '') {
+            document.getElementById("failEmail").innerHTML = "Khong duoc de trong !";
+            check = false;
+        } else if (!EMAIL_PATTERN.test(email)) {
+            document.getElementById("failEmail").innerHTML = "Email khong dung dinh dang !";
+            check = false;
+        } else {
+            document.getElementById("failEmail").innerHTML = "";
+        }
+        if (username.trim() == '') {
+            document.getElementById("failUserName").innerHTML = "Khong duoc de trong !";
+            check = false;
+        } else if (username.length < 6) {
+            document.getElementById("failUserName").innerHTML = "Nhap toi thieu 6 ki tu";
+            check = false;
+        } else if(checkUserNameExist(username)){
+            document.getElementById("failUserName").innerHTML = "Ten dang nhap da ton tai !";
+            check = false;
+        }
+        else {
+            document.getElementById("failUserName").innerHTML = "";
+        }
+        if (phone.trim() == '') {
+            document.getElementById("failPhone").innerHTML = "Khong duoc de trong !";
+            check = false;
+        } else if (phone.length < 10) {
+            document.getElementById("failPhone").innerHTML = "So dien thoai khong dung dinh dang";
+            check = false;
+        } else {
+            document.getElementById("failPhone").innerHTML = "";
+        }
+        if (password.trim() == '') {
+            document.getElementById("failPassWord").innerHTML = "Khong duoc de trong !";
+            check = false;
+        } else if (password.length < 6) {
+            document.getElementById("failPassWord").innerHTML = "nhap toi thieu 6 ki tu";
+            check = false;
+        } else {
+            document.getElementById("failPassWord").innerHTML = "";
+        }
+        if (rePassword !== password) {
+            document.getElementById("failRePassWord").innerHTML = "mat khau khong trung khop "
+            check = false;
+        } else {
+            document.getElementById("failRePassWord").innerHTML = "";
+        }
+        if (check) {
+            isCheck = true;
+            user = new User(email, username, phone,password)
+        } else {
+            isCheck = false;
+        }
+
+
+    }
+    function register() {
+        if (isCheck) {
+            arr.push(user);
+        localStorage.setItem('user', JSON.stringify(user));
+        location.href="login.html";
+        }
+    }
+    function checkUserNameExist(userNameCheck){
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i].username===userNameCheck){
+                return true;
+            }
+        }
+        return false
+    }
 </script>
+</body>
 </html>
