@@ -1,13 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
-html {
-    scroll-behavior: smooth;
-}
-
 body{
     font-family: 'Poppins', sans-serif;
     font-size: 13px;
@@ -15,10 +13,6 @@ body{
     text-align: left;
     overflow-x: hidden;
     max-width: 100%;
-}
-.sp{
-    text-decoration: none;
-    color: black;
 }
 .top-header{
     width: 100%;
@@ -28,11 +22,6 @@ body{
     justify-content: center;
     opacity: 0.8;
     align-items: center;
-    /* position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: 5; */
 }
 .header{
     max-width: 1170px;
@@ -41,6 +30,7 @@ body{
     flex-wrap: wrap;
 
 }
+
 .menu{
     list-style-type: none;
     display: flex;
@@ -78,13 +68,8 @@ body{
 }
 .li-home:hover .home{
     display: block;
-    width: 200px;
+    width: 100px;
     background: #292929;
-}
-.home li {
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
 }
 .section-icon{
     margin-left: 130px;
@@ -255,16 +240,9 @@ body{
     border-top:1px solid #dddddd ;
     padding-top: 40px;
 }
-
-.product-top-sellers a {
-    text-decoration: none;
-    color: unset;
-}
-
 .item-product{
     width: 25%;
     padding: 10px;
-    position: relative;
 }
 /* .item-product>img{
     position: relative;
@@ -275,10 +253,6 @@ body{
     margin-top: 12px;
     display: none;
     background-color: #fff;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: 2;
 }
 
 .text-product{
@@ -302,7 +276,7 @@ body{
     background-size: contain;
     background-repeat: no-repeat;
 }
-/* .img-product1{
+.img-product1{
     background-image: url(images/product1.png);
 }
 .img-product2{
@@ -325,7 +299,7 @@ body{
 }
 .img-product8{
     background-image: url(images/product8.png);
-} */
+}
 .shopping-cart,.fa-eye,.fa-heart,.fa-exchange-alt{
     border: 1px solid #dddddd;
     margin-top: 8px;
@@ -442,9 +416,8 @@ body{
     margin: 30px 0 38px 0;
 }
 .icon-footer1>i{
-    padding: 4px 16px;
-    margin: 0 2px;
-    cursor: pointer;
+    margin-left: 23px;
+    margin-right: 23px;
 }
 .section-footer2{
     display: flex;
