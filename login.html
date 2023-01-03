@@ -5,35 +5,25 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 	<title>title</title>
 	<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-	<script src="register.js"></script>
 </head>
 <body class="bg-gray-50">
 <header class="top-header ">
 	<div class="header">
-		<a href="public/index.html" class="logo">
+		<a class="logo">
 			<img src="images/Logo.png" alt="logo">
 		</a>
 		<div  class="menu" id="menu">
 			<nav class="nav-menu" >
-				<li onclick="AddItemMenuMobile()" class="li-home"><a href="public/index.html">Trang chủ</a><i class="fas fa-chevron-right"></i>
+				<li onclick="AddItemMenuMobile()" class="li-home"><a href="index.html">Trang chủ</a><i class="fas fa-chevron-right"></i>
 					<nav class="home" id="home"></nav>
-				<li><a href="public/index.html#scontent">Bán chạy</a></li>
-				<li><a href="public/index.html#scontent">Thiết bị</a></li>
-				<li><a href="public/index.html#scontent">Review</a></li>
+				<li><a href="index.html#scontent">Bán chạy</a></li>
+				<li><a href="index.html#scontent">Thiết bị</a></li>
 			</nav>
-			</li>
-			<li><a href="sanpham.html">Sản phẩm</a></li>
-			<li><a href="contact.html">Liên hệ</a></li>
-			<li><a href="#">Danh mục</a></li>
-			<li><a href="#">Blog</a></li>
-
-			</nav>
-
 		</div>
 		<div class="section-icon">
 			<div class="icon">
@@ -60,7 +50,6 @@
 									class="text-white m-[5px] p-[10px] w-[50px] h-[50px] bg-[#3856a3] rounded-[50%] border border-[#3856a3]  hover:bg-white  hover:text-[#3856a3]">
 								<i class="text-[30px] fab fa-facebook-f"></i>
 							</div>
-
 						</a>
 
 						<a href="#">
@@ -70,7 +59,6 @@
 							</div>
 						</a>
 					</div>
-
 				</div>
 				<hr class="mt-6 border-b-1 border-gray-300">
 			</div>
@@ -78,20 +66,19 @@
 				<form>
 					<div class="relative w-full mb-3"><label
 							class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-							for="validate-username" oninput="validate()">User Name</label>
-						<input id="validate-username" type="text"
+							for="username">User Name</label>
+						<input  oninput="validate()" id="username" type="text"
 							   class="border-0 mb-4 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
 						>
-						<p class="text-red-700 " id=""></p>
 					</div>
 
 					<div class="relative w-full mb-3"><label
 							class="block uppercase text-blueGray-600 text-xs font-bold mb-2"
-							for="validate-password" oninput="validate()">Mật khẩu</label>
-						<input id="validate-password" type="password"
+							for="password" >Mật khẩu</label>
+						<input oninput="validate()" id="password" type="password"
 							   class="border-0 mb-4 py-3 placeholder-gray-300 text-blueGray-600 bg-white rounded text-sm shadow focus:outline-none focus:ring w-full ease-linear transition-all duration-150"
 						>
-						<p class="text-red-700 " id="mk"></p>
+						<p class="text-red-700 " id="fail"></p>
 					</div>
 					<div><label class="inline-flex items-center cursor-pointer"><input id="customCheckLogin"
 																					   type="checkbox"
@@ -132,16 +119,17 @@
 			home.className = "home";
 		}
 	}
-	let listUser = JSON.parse(localStorage.getItem("listUser"))
+	let listUser = JSON.parse(localStorage.getItem("list-user"))
 	if(listUser==null){
 		listUser = []
 	}
 	console.log('list User id--->', listUser)
 	let username;
 	let password;
-	let checkValidate = false;
+	let checkValidate;
 	function validate() {
 		username = document.getElementById('username').value;
+		password = document.getElementById('password').value;
 		if (username.trim()==""){
 			checkValidate = false;
 			document.getElementById('validate_username').innerHTML = "<label style='color: red'> tai khoan  de trong </label> "
@@ -149,7 +137,6 @@
 			checkValidate = true;
 			document.getElementById('validate_username').innerHTML = "";
 		}
-		password = document.getElementById('password').value;
 		if (password.trim()==""){
 			checkValidate = false;
 			document.getElementById('validate-password').innerHTML = "<label style='color: red'>mat khau de trong</label>"
@@ -158,25 +145,21 @@
 			document.getElementById('validate-password').innerHTML = "";
 		}
 	}
-	function findByUserName(username) {
-		for (let i = 0; i < listUser.length; i++) {
-			if (listUser[i].username==username){
-				return listUser[i]
-
-			}
-		}
-	}
-
 	function login() {
 		if (checkValidate) {
 			let checkLogin = false;
 			for (let i = 0; i < listUser.length ; i++) {
 				if ( listUser[i].username==username && listUser[i].password == password ){
-
-					break;
+					checkLogin=true;
+					localStorage.setItem('currentUser',JSON.stringify(listUser[i]))
+						break;
 				}
 			}
-
+			if (checkLogin){
+				location.href="index.html"
+			} else {
+				document.getElementById("fail").innerText = 'Tai khoan hoan mat khau ko dung vui long nhap lai!'
+			}
 
 		}
 	}

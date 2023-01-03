@@ -24,7 +24,7 @@ body{
     align-items: center;
 }
 .header{
-    max-width: 1170px;
+    width: 1170px;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
@@ -107,7 +107,7 @@ body{
 
 }
 .section-header{
-    background-image: url(images/banner.png);
+    background-image: url(../images/banner.png);
     display: block;
     background-position: center;
     background-size: cover;
@@ -159,17 +159,17 @@ body{
     width: 33.333333333333333333%;
 }
 .img-dumbbells{
-    background-image: url(images/img-dumbbells.png);
+    background-image: url(../images/img-dumbbells.png);
     background-position-x: center;
     background-size: cover;
 }
 .img-stregth{
-    background-image: url(images/img-stregth.png);
+    background-image: url(../images/img-stregth.png);
     background-position-x: center;
     background-size: cover;
 }
 .img-power-rack-cages{
-    background-image: url(images/img-power.png);
+    background-image: url(../images/img-power.png);
     background-position-x: center;
     background-size: cover;
 }
@@ -277,28 +277,28 @@ body{
     background-repeat: no-repeat;
 }
 .img-product1{
-    background-image: url(images/product1.png);
+    background-image: url(../images/product1.png);
 }
 .img-product2{
-    background-image: url(images/product2.png);
+    background-image: url(../images/product2.png);
 }
 .img-product3{
-    background-image: url(images/product3.png);
+    background-image: url(../images/product3.png);
 }
 .img-product4{
-    background-image: url(images/product4.png);
+    background-image: url(../images/product4.png);
 }
 .img-product5{
-    background-image: url(images/product5.png);
+    background-image: url(../images/product5.png);
 }
 .img-product6{
-    background-image: url(images/product6.png);
+    background-image: url(../images/product6.png);
 }
 .img-product7{
-    background-image: url(images/product7.png);
+    background-image: url(../images/product7.png);
 }
 .img-product8{
-    background-image: url(images/product8.png);
+    background-image: url(../images/product8.png);
 }
 .shopping-cart,.fa-eye,.fa-heart,.fa-exchange-alt{
     border: 1px solid #dddddd;
@@ -345,7 +345,7 @@ body{
 .image-client-say{
     width: 80px;
     height: 80px;
-    background-image: url(images/img-client2.png);
+    background-image: url(../images/img-client2.png);
     background-position-x: -58px;
     border-radius: 54px;
     margin: 0 auto;

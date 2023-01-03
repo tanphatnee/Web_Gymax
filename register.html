@@ -1,45 +1,35 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- css -->
-
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
     <title>title</title>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 </head>
 <body class="bg-gray-50">
 <header class="top-header ">
     <div class="header">
-        <a href="public/index.html" class="logo">
+        <a class="logo">
             <img src="images/Logo.png" alt="logo">
         </a>
-        <div class="menu" id="menu">
-            <nav class="nav-menu">
-                <li onclick="AddItemMenuMobile()" class="li-home"><a href="public/index.html">Trang chủ</a><i
-                        class="fas fa-chevron-right"></i>
+        <div  class="menu" id="menu">
+            <nav class="nav-menu" >
+                <li onclick="AddItemMenuMobile()" class="li-home"><a href="index.html">Trang chủ</a><i class="fas fa-chevron-right"></i>
                     <nav class="home" id="home"></nav>
-                <li><a href="public/index.html#scontent">Bán chạy</a></li>
-                <li><a href="public/index.html#scontent">Thiết bị</a></li>
-                <li><a href="public/index.html#scontent">Review</a></li>
-            </nav>
-            </li>
-            <li><a href="sanpham.html">Sản phẩm</a></li>
-            <li><a href="contact.html">Liên hệ</a></li>
-            <li><a href="#">Danh mục</a></li>
-            <li><a href="#">Blog</a></li>
+                <li><a href="index.html#scontent">Bán chạy</a></li>
+                <li><a href="index.html#scontent">Thiết bị</a></li>
             </nav>
         </div>
         <div class="section-icon">
             <div class="icon">
                 <div class="icon-search icon-top"><i class="fas fa-search fa-lg"></i></div>
                 <div class="icon-cart icon-top"><i class="fas fa-shopping-basket fa-lg"></i></i></div>
-                <div class="user icon-top"><a href="login.html" class="text-white"><i class="fas fa-user fa-lg"></i></a>
-                </div>
+                <div class="user icon-top"><a href="login.html" class="text-white"><i class="fas fa-user fa-lg"></i></a></div>
             </div>
         </div>
         <button class="btn-menu" onclick="AddMenuMobile()"><i class="fas fa-bars fa-lg"></i></button>
@@ -137,7 +127,7 @@
     let rePasswordInput = document.getElementById("inputRePassWord")
     let isCheck;
     let user;
-    let arr = JSON.parse(localStorage.getItem("listUser"));
+    let arr = JSON.parse(localStorage.getItem("list-user"));
     if(arr ==null) {
         arr = []
     }
@@ -209,7 +199,7 @@
     function register() {
         if (isCheck) {
             arr.push(user);
-        localStorage.setItem('user', JSON.stringify(user));
+        localStorage.setItem('list-user', JSON.stringify(arr));
         location.href="login.html";
         }
     }
